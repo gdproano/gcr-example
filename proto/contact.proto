@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package contact;
+
+service Contact {
+
+  rpc getDetails (ContactRequest) returns (ContactResponse) {}
+}
+
+
+message ContactRequest {
+  int32 id = 1;
+}
+
+message ContactResponse{
+  ContactDetails message = 1;
+}
+message ContactDetails {
+  int32 id = 1;
+  string email = 2;
+  string firstName = 3; 
+  string lastName = 4;
+}
